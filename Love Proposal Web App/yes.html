@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>She Said YES! 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ff8ba7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Comic Sans MS', sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 5px 20px;
+    }
+    img {
+      width: 250px;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Yehhhhhh😍 🎉</h1>
+  <p>Congratulations, you’re now stuck with me. 😗</p>
+  <p>" I love YOUUUUUUUUUU "</p>
+  
+  
+
+ <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTEwdmZmM2xwZ3VlMXpubGVkNDFjZmR4anIzZWE3a2ZsMGI1cGs4eSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/35DmVHlLURCWBxmK8j/giphy.gif" alt="Cute Bunny Couple GIF">
+
+
+
+
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function launchConfetti() {
+      const duration = 5 * 1000;
+      const end = Date.now() + duration;
+      const colors = ['#ff4b5c', '#ff6f91', '#ffc6d9', '#ffffff'];
+
+      (function frame() {
+        confetti({
+          particleCount: 3,
+          angle: 60,
+          spread: 120,
+          origin: { x: 0 },
+          colors: colors
+        });
+        confetti({
+          particleCount: 3,
+          angle: 120,
+          spread: 120,
+          origin: { x: 1 },
+          colors: colors
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+    launchConfetti();
+  </script>
+  <p style="position: fixed; bottom: 10px; right: 77%; transform: translateX(-50%); font-size: 15px; color: #2f1aca;">
+  Made by <strong>Tirth Patel</strong><br>
+  <a href="https://github.com/tirthp25" target="_blank" style="color: #fff; text-decoration: underline;">GitHub</a> | 
+  <a href="https://www.linkedin.com/in/tirth-patel-240b2a288/" target="_blank" style="color: #fff; text-decoration: underline;">LinkedIn</a>
+</p>
+</body>
+</html>

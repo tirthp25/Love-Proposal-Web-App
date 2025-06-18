@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ff8ba7;
+            margin: 0;
+            font-family: sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            margin: 10px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background: #fff;
+            color: #ff4b5c;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #ffe0e9;
+        }
+        #noButton {
+            position: absolute;
+            transition: 0.4s;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my girlfriend? ❤️</h1>
+        <img src="https://64.media.tumblr.com/44437aaa3af65ef5b5dc25b2cf1e81d1/6acc7d78ea83e207-45/s400x600/5b30035952803850ed3136fbe760ceff97ee8d19.gif" alt="Cute Gif">
+        <div>
+            <button class="btn" onclick="launchConfetti(); setTimeout(nextPage, 2000)">YES</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()">NO</button>
+        </div>
+    </div>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <!-- Heart Confetti Function -->
+    <script>
+        function launchConfetti() {
+            const duration = 3 * 1000;
+            const animationEnd = Date.now() + duration;
+            const defaults = { startVelocity: 20, spread: 360, ticks: 90, zIndex: 1000 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            const interval = setInterval(function() {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 4,
+                    origin: { x: randomInRange(0, 1), y: Math.random() - 0.2 },
+                    shapes: ['circle'], // HEART shape doesn't work in this library by default, circles look good
+                    colors: ['#ff4b5c', '#ff6f91', '#ffc6d9']
+                }));
+            }, 200);
+        }
+
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
+        }
+    </script>
+    <p style="position: fixed; bottom: 10px; right: 77%; transform: translateX(-50%); font-size: 15px; color: #2f1aca;">
+  Made by <strong>Tirth Patel</strong><br>
+  <a href="https://github.com/tirthp25" target="_blank" style="color: #fff; text-decoration: underline;">GitHub</a> | 
+  <a href="https://www.linkedin.com/in/tirth-patel-240b2a288/" target="_blank" style="color: #fff; text-decoration: underline;">LinkedIn</a>
+</p>
+
+</body>
+</html>
